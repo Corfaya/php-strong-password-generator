@@ -4,16 +4,16 @@ if (isset($_GET["length"]) && $_GET["length"] >= 8) {
     // trasformare stringa in integer
     $lengthToInt = (int)$_GET["length"];
     // funzione per generare la password della lunghezza richiesta
-    function pwGenerator($lengthToInt) {
+    function pwGenerator($lengthToInt)
+    {
         // variabile password da riempire + variabile caratteri
         $password = "";
-        $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,;.:-_'?!£$%&/\|=éèàòù[]@ç#°§<>";
+        $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,;.:-_'?!$%&|\=[]@#<>";
         // iterazione per la lunghezza impostata dall'utente
         for ($k = 0; $k < $lengthToInt; $k++) {
             // rand method: genera numero random tra 0 e lunghezza stringa $char - 1 (pescaggio index)
             $password .= $chars[rand(0, strlen($chars) - 1)];
         }
-        var_dump($password);
         return $password;
     }
     $pw = pwGenerator($lengthToInt);
@@ -51,6 +51,11 @@ if (isset($_GET["length"]) && $_GET["length"] >= 8) {
                                     <label class="fw-bolder fs-5 mb-3" for="length">Scegli la lunghezza della tua password</label>
                                     <input class="form-control form-control-sm mw-50" type="number" min="8" max="18" name="length" id="length" placeholder="Seleziona una lunghezza tra 8 e 18" required>
                                 </div>
+                            </div>
+                            <div class="col-6">
+                                <?php if (isset($_GET["length"])) { ?>
+                                    <p>La password generata è: <?php echo $pw ?></p>
+                                <?php } ?>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="mt-3">Invia</button>
