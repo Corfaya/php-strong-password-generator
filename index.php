@@ -1,11 +1,16 @@
 <?php
 include "./functions.php";
+session_start();
+
 // controllo esistenza del dato
 if (isset($_GET["length"]) && $_GET["length"] >= 8) {
     // trasformare stringa in integer
     $lengthToInt = (int)$_GET["length"];
     // chiamata funzione per generare la password della lunghezza richiesta
     $pw = pwGenerator($lengthToInt);
+    // salva password nella sessione
+    $_SESSION["user_password"] = $pw;
+    header("Location: ./redirect.php");
 }
 ?>
 
@@ -41,11 +46,14 @@ if (isset($_GET["length"]) && $_GET["length"] >= 8) {
                                     <input class="form-control form-control-sm mw-50" type="number" min="8" max="18" name="length" id="length" placeholder="Seleziona una lunghezza tra 8 e 18" required>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <?php if (isset($_GET["length"])) { ?>
-                                    <p>La password generata è: <?php echo $pw ?></p>
-                                <?php } ?>
-                            </div>
+                            <!-- <div class="col-6">
+                                <?php //if (isset($_GET["length"])) { 
+                                ?>
+                                    <p>La password generata è: <?php //echo $pw 
+                                                                ?></p>
+                                <?php //} 
+                                ?>
+                            </div> -->
                             <div class="col-12">
                                 <button type="submit" class="mt-3">Invia</button>
                             </div>
