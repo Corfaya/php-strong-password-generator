@@ -1,3 +1,12 @@
+<?php
+    // controllo esistenza del dato
+    if(isset($_GET["length"]) && $_GET["length"] >= 8) {
+        // trasformare stringa in integer
+        $lengthToInt = (int)$_GET["length"];
+        var_dump($lengthToInt);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +36,7 @@
                             <div class="col-6">
                                 <div class="form-group mt-5">
                                     <label class="fw-bolder fs-5 mb-3" for="length">Scegli la lunghezza della tua password</label>
-                                    <input class="form-control form-control-sm mw-50" type="number" min="8" max="18" name="length" id="length" placeholder="Seleziona una lunghezza tra 8 e 18">
+                                    <input class="form-control form-control-sm mw-50" type="number" min="8" max="18" name="length" id="length" placeholder="Seleziona una lunghezza tra 8 e 18" required>
                                 </div>
                             </div>
                             <div class="col-12">
