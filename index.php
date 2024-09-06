@@ -1,10 +1,15 @@
 <?php
-    // controllo esistenza del dato
-    if(isset($_GET["length"]) && $_GET["length"] >= 8) {
-        // trasformare stringa in integer
-        $lengthToInt = (int)$_GET["length"];
-        var_dump($lengthToInt);
+// controllo esistenza del dato
+if (isset($_GET["length"]) && $_GET["length"] >= 8) {
+    // trasformare stringa in integer
+    $lengthToInt = (int)$_GET["length"];
+    // funzione per generare la password della lunghezza richiesta
+    function pwGenerator($lengthToInt) {
+        // variabile password da riempire + variabile caratteri
+        $password = "";
+        $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,;.:-_'?!£$%&/\|=éèàòù[]@ç#°§<>";
     }
+}
 ?>
 
 <!DOCTYPE html>
