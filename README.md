@@ -15,3 +15,12 @@ Invece di visualizzare la password nella index, effettuare un redirect ad una pa
 ## Milestone 4 (BONUS)
 Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme).
 Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.
+
+# Flow
+- Creare una form su index.php
+- Chiedere a utente lunghezza della password e inviare dato tramite GET
+- Creare sullo stesso file una funzione per generare una password casuale
+    - Scrivere una variabile stringa con valore stringa vuota per la password
+    - Scrivere una variabile stringa con tutti i caratteri (lettere minuscole, maiuscole, numeri e simboli vari)
+    - Ciclare per tutta la lunghezza - scelta dall'utente - della password
+        - A ogni iterazione, concatenare un elemento random appartenente alla stringa con tutti i caratteri
