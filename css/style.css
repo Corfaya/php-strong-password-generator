@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   color: #fff; 
+}
+
+main {
+    background-color: #229799;
+}
+
+.form-box {
+    background-color: #48CFCB;
+    border: 1px solid #fff;
+}
+
+button {
+    background-color: #229799;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.5s;
+}
+
+button:hover {
+    background-color: #26a6a8;
+}
+
+button:active {
+    background-color: #1c8183;
+}
