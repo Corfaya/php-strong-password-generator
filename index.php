@@ -1,21 +1,10 @@
 <?php
+include "./functions.php";
 // controllo esistenza del dato
 if (isset($_GET["length"]) && $_GET["length"] >= 8) {
     // trasformare stringa in integer
     $lengthToInt = (int)$_GET["length"];
-    // funzione per generare la password della lunghezza richiesta
-    function pwGenerator($lengthToInt)
-    {
-        // variabile password da riempire + variabile caratteri
-        $password = "";
-        $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,;.:-_'?!$%&|\=[]@#<>";
-        // iterazione per la lunghezza impostata dall'utente
-        for ($k = 0; $k < $lengthToInt; $k++) {
-            // rand method: genera numero random tra 0 e lunghezza stringa $char - 1 (pescaggio index)
-            $password .= $chars[rand(0, strlen($chars) - 1)];
-        }
-        return $password;
-    }
+    // chiamata funzione per generare la password della lunghezza richiesta
     $pw = pwGenerator($lengthToInt);
 }
 ?>
