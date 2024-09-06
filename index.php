@@ -10,6 +10,7 @@ if (isset($_GET["length"]) && $_GET["length"] >= 8) {
     $pw = pwGenerator($lengthToInt);
     // salva password nella sessione
     $_SESSION["user_password"] = $pw;
+    // reindirizzare a pagina
     header("Location: ./redirect.php");
 }
 ?>
@@ -36,7 +37,7 @@ if (isset($_GET["length"]) && $_GET["length"] >= 8) {
             <div class="row">
                 <div class="col-12">
                     <div class="form-box rounded p-5 mt-4">
-                        <form action="./index.php" methods="GET">
+                        <form action="./index.php" method="GET">
                             <div class="col-12">
                                 <h2 class="text-center">Genera una password sicura</h2>
                             </div>
